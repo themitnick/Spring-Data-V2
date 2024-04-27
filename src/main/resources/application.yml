@@ -1,0 +1,24 @@
+server:
+  port: 8090
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5433/sales
+    username: postgres
+    password: admin
+  ## Specify DBMS
+  jpa:
+    # Hibernate DDL Auto (create, create-drop, update)
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+#  sql:
+#    init:
+#      mode: always
+#      continue-on-error: false
