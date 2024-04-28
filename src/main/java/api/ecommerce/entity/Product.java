@@ -23,6 +23,30 @@ import java.time.LocalDateTime;
         }
 
 )
+
+@NamedQuery(
+        name = "Product.findByPrice",
+        query = "SELECT p FROM Product p WHERE p.price = ?1"
+)
+
+@NamedQueries(
+        {
+                @NamedQuery(
+                        name = "Product.findAllOrderByNameDesc",
+                        query = "SELECT p FROM Product p ORDER BY p.name DESC"
+                ),
+                @NamedQuery(
+                        name = "Product.findBySku",
+                        query = "SELECT p FROM Product p WHERE p.sku = :sku"
+                )
+        }
+)
+
+@NamedNativeQuery(
+        name = "Product.findByUrlImage",
+        query = "SELECT * FROM products p WHERE p.url_image = :urlImage",
+        resultClass = Product.class
+)
 public class Product {
 
     @Id

@@ -36,11 +36,11 @@ class ProductRepositoryTest {
     @Test
     void updateProductUsingSaveMethodTest() {
 
-        Long productId = 1L;
+        Long productId = 14L;
 
         Product product = productRepository.findById(productId).get();
 
-        product.setName("Product one updated");
+        product.setName("Product 4");
         product.setPrice(new BigDecimal("285"));
 
         productRepository.save(product);
@@ -49,9 +49,10 @@ class ProductRepositoryTest {
 
     @Test
     void findProductByIdTest() {
-        Long productId = 1L;
+        Long productId = 13L;
 
         Product productFound = productRepository.findById(productId).get();
+        System.out.println(productFound.getName());
     }
 
     @Test
