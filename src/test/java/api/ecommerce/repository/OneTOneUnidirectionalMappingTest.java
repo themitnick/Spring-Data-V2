@@ -40,7 +40,7 @@ public class OneTOneUnidirectionalMappingTest {
     @Test
     void getOrderTest() {
 
-        Order order = orderRepository.findById(2L).get();
+        Order order = orderRepository.findById(1L).get();
         System.out.println(order);
     }
 

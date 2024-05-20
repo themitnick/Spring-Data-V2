@@ -58,6 +58,15 @@ class ProductRepositoryTest {
     @Test
     void saveMultipleProductTest() {
 
+        Product product1 = Product.builder()
+                .name("Product 1")
+                .description("Description of product 1")
+                .price(new BigDecimal("250"))
+                .sku("PR001")
+                .active(true)
+                .urlImage("product1.png")
+                .build();
+
         Product product2 = Product.builder()
                 .name("Product 2")
                 .description("Description of product 2")
@@ -74,6 +83,15 @@ class ProductRepositoryTest {
                 .sku("PR003")
                 .active(false)
                 .urlImage("product3.png")
+                .build();
+
+        Product product4 = Product.builder()
+                .name("Product 4")
+                .description("Description of product 4")
+                .price(new BigDecimal("321.25"))
+                .sku("PR004")
+                .active(true)
+                .urlImage("product4.png")
                 .build();
 
         Product product5 = Product.builder()
@@ -239,7 +257,7 @@ class ProductRepositoryTest {
                 .build();
 
         productRepository.saveAll(
-                List.of(product2, product3, product5, product6, product7, product8, product9, product10, product11, product12, product13, product14, product15, product16, product17,
+                List.of(product1, product2, product3, product4, product5, product6, product7, product8, product9, product10, product11, product12, product13, product14, product15, product16, product17,
                         product18, product19, product20, product21, product22)
         );
     }

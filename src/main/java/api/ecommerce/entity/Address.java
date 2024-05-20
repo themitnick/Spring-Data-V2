@@ -22,7 +22,7 @@ public class Address {
     private String zipCode;
 
 //    One To One Bidirectional mapping
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "order_id", referencedColumnName = "id")
-//    private Order order;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "order_id", referencedColumnName = "id")
+    private Order order;
 }
